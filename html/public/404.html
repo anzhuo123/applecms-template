@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>404 Not Found</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="all">
+        .animation-container {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .go-to-home-page-btn {
+            text-decoration: none;
+            position: absolute;
+            top: 6%;
+            right: 30%;
+            box-sizing: border-box;
+            padding: 8px 20px;
+            border: solid 1px rgb(0, 0 , 0, 0.5);
+            z-index: 999;
+            color: whitesmoke;
+            font-family: Arial;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 5px 0 rgb(250, 250,250, 0.5);
+            border-radius: 7px;
+        }
+        .go-to-home-page-btn:hover {
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+<div class="animation-container" id="animation-container">
+    <a onclick="tohomepage()" class="go-to-home-page-btn">Back to Home</a>
+</div>
+<script type="text/javascript" charset="utf-8">
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('animation-container'),
+        path: "{$maccms.path_tpl}static/icon/404.json",
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        name: "Demo Animation",
+    });
+    function tohomepage() {
+        window.location.replace("/")
+    }
+</script>
+</body>
+</html>

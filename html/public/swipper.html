@@ -1,0 +1,430 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<style>
+    /* === Google Font Import - Poppins === */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    section {
+        position: relative;  
+        height: 240px;
+        width: 53%;
+        display: flex;
+        margin: 0 auto;
+    }
+    .swiper-pagination-ct {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        width: 100%;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-pagination-ctx {
+        box-sizing: border-box;
+        height: 10px;
+        background-color: rgb(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+    .swiper-pagination-ctx-smal {
+        width: 20px;
+    }
+    .swiper-pagination-ctx-big {
+        width: 70px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+    .swiper-pagination-ctx-big-progres {
+        box-sizing: border-box;
+        width: 0%;
+        height: 100%;
+        background-color: #B156CB;
+    }
+    @keyframes anim-prog-bar {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    .swiper-pagination-ctx-big-progres-active {
+        animation: anim-prog-bar 5.3s;
+    }
+    
+    
+    .swiper-pagination {
+        position: absolute;
+        display: none;
+    }
+    .swiper-pagination-bullet {
+        height: 8px;
+        width: 26px;
+        border-radius: 25px;
+        background: #B156CB;
+    }
+    .card {
+        box-sizing: border-box;
+        background: #fff;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        /*border: solid 1px black;*/
+    }
+    .card_img {
+        height: 140px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+    .card .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        position: relative;
+        z-index: 100;
+    }
+    section .card .image {
+        padding: 3px;
+        background: #7d2ae8;
+    }
+    section .card .image img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+    .card .media-icons {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card .media-icons i{
+        color: #fff;
+        opacity: 0.6;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .card .media-icons i:hover{
+        opacity: 1;
+    }
+    .card .name-profession{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        /* color: ; */
+    } 
+    .cntx {
+        width: 100%;
+        padding: 10px;
+        border-radius: none;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cntx img {
+        width: 200%;
+    }
+    .swiper-slide {
+        position: relative;
+        text-decoration: none;
+    }
+    .swipper-title {
+        box-sizing: box-sizing;
+        width: 53%;
+        margin: 0 auto;
+        font-weight: bold;
+        font-size: 22px;
+        color: #B156CB;
+    }
+    .video_play_icon {
+        box-sizing: border-box;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 50%;
+        z-index: 9;
+        box-shadow: 0 0 4px 0 black;
+        padding-left: 5px;
+        box-shadow: 0 0 3px 0 rgb(72, 72, 72, 0.6);
+    }
+    .video_play_icon img {
+        width: 300%;
+    }
+    .video_play_icon-swiper {
+        width: 30px;
+        height: 30px;
+    }
+    .video_play_icon-swiper img {
+        width: 150%;
+    }
+    .swiper-slide-info {
+        box-sizing: border-box;
+        color: rgb(0, 0, 0, 0.3);
+    }
+    .swiper-slide-info-name {
+        margin-top: 10px;
+        color: black;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
+        color: #B156CB;
+    }
+    .swiper-slide-info-ctx {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding: 0 3px;
+        font-size: 12px;
+    }
+    .swiper-slide-info-ctx-icon {
+        box-sizing: border-box;
+        width: 12px;
+        height: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-right: 4px;
+    }
+    .swiper-slide-info-ctx-icon img {
+        width: 100%;
+    }
+    @media screen and (max-width: 1400px) {
+        section {
+            width: 70%;
+        }
+        .swipper-title {
+            width: 70%;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        section {
+            width: 80%;
+        }
+        .swipper-title {
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        section {
+            width: 90%;
+        }
+        .swipper-title {
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        section {
+            width: 95%;
+            height: 200px;
+        }
+        .swipper-title {
+            width: 95%;
+        }
+        .card {
+            box-sizing: border-box;
+            position: relative;
+            background: #fff;
+            margin: 5px 0;
+        }
+        .card_img {
+            height: 120px;
+        }
+    }
+
+
+</style>
+<body>
+    <div class="swipper-title">热门视频</div>
+  <section>
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper content">
+        {maccms:vod num="20" type="all" order="asc" by="hits" ids="all"}
+            <a class="swiper-slide card" href="{:mac_url_vod_detail($vo)}" onmouseover="vidoItemOnHoverswiper(this)" onmouseout="vidoItemOnOutswiper(this)">
+                <div class="card_img">
+                    <div class="video_play_icon video_play_icon-swiper">
+                        <img src="{$maccms.path_tpl}static/icon/ply.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="cntx">
+                            <img src="{$vo.vod_pic}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide-info">
+                    <div class="swiper-slide-info-name">{$vo.vod_name}</div>
+                    <div class="swiper-slide-info-ctx">
+                        <div class="swiper-slide-info-ctx-icon">
+                            <img src="{$maccms.path_tpl}static/icon/eye.svg" alt="">
+                        </div>
+                        <span>{$vo.vod_hits}</span> 
+                        <div class="swiper-slide-info-ctx-icon" style="margin-left: 15px">
+                            <img src="{$maccms.path_tpl}static/icon/love.svg" alt="">
+                        </div>
+                        <span>{$vo.vod_up}</span>
+                    </div>
+                </div>
+            </a>
+        {/maccms:vod}
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination-ct">
+        <div class="swiper-pagination-ctx swiper-pagination-ctx-smal">
+            <div class="swiper-pagination-ctx-big-progres"></div>
+        </div>
+        <div class="swiper-pagination-ctx swiper-pagination-ctx-big">
+            <div class="swiper-pagination-ctx-big-progres"></div>
+        </div>
+    </div>
+    <button class="swiper-button-next" style="display: none">
+  </section>
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+        var cardSlideCount = 4; 
+    var swiper;
+    function loadSwipper () {
+        const width = document.body.clientWidth;
+        if(width > 1400) {
+            cardSlideCount = 4;
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: cardSlideCount,
+            spaceBetween: 15,
+            slidesPerGroup: cardSlideCount,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: 'true',
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+                observer: true,  
+                observeParents: true,
+            });
+        } else if(width < 1400 && width > 600) {
+            cardSlideCount = 3;
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: cardSlideCount,
+            spaceBetween: 15,
+            slidesPerGroup: cardSlideCount,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+                observer: true,  
+                observeParents: true,
+            });
+        } else if(width < 600) {
+            cardSlideCount = 2;
+            swiper = new Swiper(".mySwiper", {
+            slidesPerView: cardSlideCount,
+            spaceBetween: 10,
+            slidesPerGroup: cardSlideCount,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+                observer: true,  
+                observeParents: true,
+            });
+        }
+    };
+    loadSwipper()
+    const nextSwiper = document.querySelector(".swiper-button-next");
+    window.addEventListener("resize", (e) => { loadSwipper () })
+    
+    function nextSlideSwepperclck ({swepBig, swepSmal}) {
+        nextSwiper.click();
+        document.querySelector(".swiper-pagination-ctx-big").querySelector(".swiper-pagination-ctx-big-progres").classList.remove("swiper-pagination-ctx-big-progres-active");
+        swepBig.classList.add("swiper-pagination-ctx-smal")
+        swepBig.classList.remove("swiper-pagination-ctx-big")
+        swepSmal.classList.remove("swiper-pagination-ctx-smal")
+        swepSmal.classList.add("swiper-pagination-ctx-big")
+        setTimeout(() => {
+            nextSlideSwepper()
+        }, 100)
+    }
+    function nextSlideSwepper() {
+        document.querySelector(".swiper-pagination-ctx-big").querySelector(".swiper-pagination-ctx-big-progres").classList.add("swiper-pagination-ctx-big-progres-active");
+        setTimeout(() => {
+            nextSlideSwepperclck({
+                swepBig: document.querySelector(".swiper-pagination-ctx-big"),
+                swepSmal: document.querySelector(".swiper-pagination-ctx-smal")
+            });
+        }, 5000);
+    }
+    nextSlideSwepper()
+    function vidoItemOnHoverswiper(e) {
+        e.querySelector(".video_play_icon").style.display = "flex";
+    }
+    function vidoItemOnOutswiper(e) {
+        e.querySelector(".video_play_icon").style.display = "none";
+    };
+    function elementSchange(e) {
+        console.log(e)
+    }         
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

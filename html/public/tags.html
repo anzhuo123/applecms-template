@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{$maccms.website_name}</title>
+    </head>
+
+<style>
+    .vod_tags_str {
+        display: flex;
+        flex-wrap: wrap;
+        width: 53%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .vod_tags_item {
+        padding: 4px 8px;
+        display: flex;
+        width: max-content;
+        height: max-content;
+        align-items: center;
+        justify-content: center;
+    }
+    .rej_tag {
+        padding: 2px 5px;
+        display: flex;
+        flex-wrap: wrap;
+        color: #B156CB;
+    }
+    .rej_tag a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
+<body>
+    <div class="vod_tags_str">
+        标签：<div class="rej_tag">{$obj.vod_tag}</div>
+    </div>
+<script>
+    const contx = document.querySelector(".rej_tag")
+        const vod_tags = contx.textContent;
+        contx.innerHTML = "";
+        vod_tags.split(" ").map(it => {
+            var a = document.createElement('a');
+            a.setAttribute("class", "vod_tags_item");
+            a.setAttribute("href", it);
+            a.innerText = it;
+            if(a.textContent !== " " && it.length > 1) {
+                console.log(a)
+                contx.appendChild(a)
+            }
+        })
+</script>
+</body>
+</html>

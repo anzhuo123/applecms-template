@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head lang="zh-cn">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<meta name="format-detection" content="telephone=no, email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="applicable-device" content="pc,mobile" />
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="full-screen" content="yes" />
+<meta name="browsermode" content="application" />
+<meta name="x5-fullscreen" content="true" />
+<meta name="x5-page-mode" content="app" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="robots" content="noarchive" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="public, max-age=1800, must-revalidate" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>{$obj.type_name}-第{$param.page}页-{$maccms.site_name}</title>
+   <meta name="keywords" content="{$obj.type_name}-第{$param.page}页-{$maccms.site_name}" />
+   <meta name="description" content="{$obj.type_name}-第{$param.page}页-{$maccms.site_name}" />
+{include file="public/include"}
+</head>
+<body>
+    {include file="public/head"}
+    <div style="width: 100%; padding-top: 70px;"></div>
+    {include file="public/category"}
+    <div style="width: 100%; padding-top: 70px;"></div>
+    {include file="public/swipper"}
+    
+<div class="video_list">
+        <div class="video_list_category">{$obj.type_name}</div>
+        <div class="video_list_content">
+             {maccms:vod num="28" paging="yes" type="current" order="desc" by="time"}
+            <div class="video_item" onmouseover="vidoItemOnHover(this)" onmouseout="vidoItemOnOut(this)">
+                <a href="{:mac_url_vod_detail($vo)}" class="vid_img_link">
+                    <div class="vid_thum">
+                            <div class="video_play_icon">
+                                <img src="{$maccms.path_tpl}static/icon/ply.svg" alt="">
+                            </div>
+                            <img class="video_tumbnail_img img-thum" src="{$vo.vod_pic}" alt="">
+                    </div>
+                </a>
+                <div class="vid_info">
+                    <div class="vid_info_name">
+                        {$vo.vod_name}
+                    </div>
+                    <div class="vid_info_name-opt">
+                        <div class="vid_info_name-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/eye.png" alt="">
+                        </div>
+                        <span>
+                            {$vo.vod_hits}
+                        </span>
+                        <div class="vid_info_name-opt-icon" style="margin-left: 15px;">
+                            <img src="{$maccms.path_tpl}static/icon/calendar-symbol-svgrepo-com (1).svg" alt="">
+                        </div>
+                        <span class="vid_info_time_update">
+                            {$vo.vod_up}%
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            {/maccms:vod}
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="novel-list">
+        <!-- <div></div> -->
+
+        <div class="novel_list_category">
+            <div class="d-flex">
+                <div class="novel-list-item">情色小说</div>
+            </div>
+        </div>
+        <div class="novel-list_ctx">
+            {maccms:art num="10" paging="no" type="all" order="asc" by="sort"}
+            <div class="novel-ctx-item">
+                
+                 <a class="novel-ctx-item-name-a" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}">
+                     <div class="novel-ctx-item-name">{$vo.art_name}</div>
+                 </a>
+                 
+                <div class="novel-ctx-item-info">
+                    <div class="novel-ctx-item-info-opt">
+                        <div class="novel-ctx-item-info-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/eye.svg" alt="">
+                        </div>
+                        {$vo.art_hits}
+                    </div>
+                    <div class="novel-ctx-item-info-opt" style="margin-left: 15px">
+                        <div class="novel-ctx-item-info-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/love.svg" alt="">
+                        </div>
+                        {$vo.art_points}
+                    </div>
+                </div>
+            </div>
+            {/maccms:art}
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {include file="public/foot"}
+    
+    
+    
+    
+    
+
+    
+    

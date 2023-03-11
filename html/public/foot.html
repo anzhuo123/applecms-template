@@ -1,0 +1,294 @@
+<div class="foot">
+    <div class="foot-content">
+        <div class="foot-content-left">
+            <div class="copyright">
+                <img src="{$maccms.path_tpl}static/icon/logo.svg" alt="">
+            </div>
+            <span>Copyright &copy; 2023 All rights reserved.</span>
+        </div>
+        <div class="foot-content-right">
+            <div class="foot-content-right-text" style="margin-right: 50px;">
+                <span>广告合作纸飞机</span>
+                <a href="#">@xyz_99le</a>
+            </div>
+            <div class="foot-content-right-text">
+                <span>官方邮箱</span>
+                <a href="#">99le.xyz@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer-bottom" id="footer-bottom">
+    <div class="d-flex footer-bottom-ctx">
+        <div class="header-top-icon header-foot-icon">
+            <img  src="{$maccms.path_tpl}static/icon/bck_bottom.gif" alt="">
+        </div>
+        <div class="header-foot-icon-text" style="margin-left: 20px; letter-spacing: 5px; font-size: 15px;">
+            <span class="footer-bottom-name">
+                安卓
+            </span>
+            <span>
+                谷歌
+            </span>
+        </div>
+    </div>
+    <div class="header-top-icon-link-ads" style="background: white; color: red;">
+        <div class="header-top-icon-link-ads-cls-btn" onclick="hiddenBottomNav()" style="background: red;">
+            <img src="{$maccms.path_tpl}static/icon/x.png" alt="" >
+        </div>
+        <a href="#">
+            立即下载
+        </a>
+    </div>
+</div>
+
+
+
+
+
+<div id="myBtn" onclick="topFunction()" class="btn_back_top">
+    <div class="icon">
+        <img src="{$maccms.path_tpl}static/icon/bck_top.svg" alt="">
+    </div>
+</div>
+
+<div class="ads-cld-right-box">
+    <div class="ads-cld-right-box-ctx">
+       <div class="ads-cld-right-box-hidden-btn" onclick="hiddenAdsonRight()">
+           <img src="{$maccms.path_tpl}static/icon/x-red-fsmoke.svg" alt="" >
+       </div>
+        <img  src="{$maccms.path_tpl}static/icon/bck_bottom.gif" alt=""> 
+    </div>
+</div>
+
+<div class="popup-container-b">
+    
+    
+    <!--<div class="popup-container">-->
+    <!--<div class="popup-close-btn" onclick="shareHidden()">-->
+    <!--    <img src="{$maccms.path_tpl}static/icon/close-x.svg" alt="">-->
+    <!--</div>-->
+    <!--<div class="popup-title">Share</div>-->
+    <!--<div class="popup-content">-->
+    <!--    <div class="popup-content-box twitter-icon" onclick="sosBtnShareLink()">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/free-twitter-logo-icon-2429-thumb.png" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box facebook-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-facebook.svg" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box reddit-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-reddit.svg" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box discord-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-discord.svg" alt="">-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!--<div class="popup-content">-->
+    <!--    <div class="popup-content-box whatsapp-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-whatsapp.svg" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box twitter-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-facebook-messenger.svg" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box twitter-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-telegram-app.svg" alt="">-->
+    <!--    </div>-->
+    <!--    <div class="popup-content-box whechat-icon">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/icons8-wechat.svg" alt="">-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!--<div class="popup-content-cp-title">Page Link</div>-->
+    <!--<div class="popup-content-cp-link">-->
+    <!--    <span class="text-link-on-share"></span>-->
+    <!--    <div class="popup-content-cp-link-cp-icon" onclick="copyTextLink()">-->
+    <!--        <img src="{$maccms.path_tpl}static/icon/copy-link.png" alt="">-->
+    <!--    </div>-->
+    <!--    <a class="serheyhr" target="_blank" href="" id="serheyhr" hidden></a>-->
+    <!--</div>-->
+    <!--</div>-->
+    
+    
+    
+    
+    <div class="popup-container">
+    <div class="popup-close-btn" onclick="closepopupBox()">
+        <img src="{$maccms.path_tpl}static/icon/close-x.svg" alt="">
+    </div>
+    <div class="popup-title">Share</div>
+    <div class="popup-content">
+        <div class="test-box">
+            <div class="popup-content-box twitter-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("twitter")'>
+                <img src="{$maccms.path_tpl}static/icon/free-twitter-logo-icon-2429-thumb.png" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box facebook-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("facebook")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-facebook.svg" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box reddit-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("reddit")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-reddit.svg" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box discord-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-discord.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="popup-content">
+        <div class="test-box">
+            <div class="popup-content-box whatsapp-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("whatsapp")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-whatsapp.svg" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box twitter-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("messenger")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-facebook-messenger.svg" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box twitter-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("telegram")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-telegram-app.svg" alt="">
+            </div>
+        </div>
+        <div class="test-box">
+            <div class="popup-content-box whechat-icon reset-box-style popup-content-box-anim" onclick='shareSosmed("wechat")'>
+                <img src="{$maccms.path_tpl}static/icon/icons8-wechat.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="popup-content-cp-title">Page Link</div>
+    <div class="popup-content-cp-link">
+        <span class="text-link-on-share"></span>
+        <div class="popup-content-cp-link-cp-icon">
+            <img src="{$maccms.path_tpl}static/icon/copy-link.png" alt="">
+        </div>
+    </div>
+</div>
+    
+    <a class="idshfidsgfv" target="_blank" href="" hidden=""></a>
+    
+    
+</div>
+
+
+
+
+<script>
+    
+    document.querySelector(".popup-content-cp-link-cp-icon").addEventListener("click", () => {
+        console.log("COPY TEXT")
+    })
+    function shareSosmed(key) {
+        if(key ==="twitter") {
+            document.querySelector(".idshfidsgfv").href = `http://twitter.com/share?text=${document.title}&url=${window.location.href}`;
+        } else if (key === "facebook") {
+            document.querySelector(".idshfidsgfv").href = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`;
+        } else if (key === "reddit") {
+            document.querySelector(".idshfidsgfv").href = `https://www.reddit.com/submit?url=${window.location.href}`;
+        } else if (key === "") {
+            document.querySelector(".idshfidsgfv").href = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`;
+        } else if (key === "whatsapp") {
+            document.querySelector(".idshfidsgfv").href = `whatsapp://send?text=${window.location.href}`;
+        } else if (key === "messenger") {
+            document.querySelector(".idshfidsgfv").href = `fb-messenger://share/?link=${window.location.href}`;
+        } else if (key === "telegram") {
+            document.querySelector(".idshfidsgfv").href = `https://t.me/share/url?url=${window.location.href}&text=${document.title}`;
+        } else if (key === "wechat") {
+            document.querySelector(".idshfidsgfv").href = `weixin://dl/businessWebview/link?url=${window.location.href}`;
+        }
+        document.querySelector(".idshfidsgfv").click() 
+    }
+    function share() {
+    document.querySelector(".popup-container-b").style.display = "flex";
+    const elemets = document.querySelectorAll(".popup-content-box-anim")
+        function loop(index, timer, arrelemet) {
+            if(index < arrelemet.length) {
+                arrelemet[index].classList.add("popup-content-box-anim-active");
+                setTimeout(() => { loop(index + 1, timer, elemets) }, timer)
+            }
+        }
+        setTimeout(() => { loop(0, 150, elemets) }, 100);
+        document.querySelector(".text-link-on-share").innerText = window.location.href.slice(0, 40)
+    };
+    function closepopupBox() {
+        const elemets = document.querySelectorAll(".popup-content-box-anim")
+        function loop(index, timer, arrelemet) {
+            if(index < arrelemet.length) {
+                arrelemet[index].classList.remove("popup-content-box-anim-active");
+                setTimeout(() => { loop(index + 1, 15, elemets) }, timer)
+            }
+        }
+        loop(0, 0, elemets)
+        setTimeout(() => { document.querySelector(".popup-container-b").style.display = "none"; }, 100)
+    };
+    
+    function copyTextLink() {
+          var copyText = document.getElementById("serheyhr");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+          navigator.clipboard.writeText(copyText.value);
+    }
+    function vidoItemOnHover(e) {
+        e.querySelector(".video_tumbnail_img").classList.add("video_tumbnail_img-active");
+        e.querySelector(".video_play_icon").style.display = "flex";
+    }
+    function vidoItemOnOut(e) {
+        e.querySelector(".video_tumbnail_img").classList.remove("video_tumbnail_img-active");
+        e.querySelector(".video_play_icon").style.display = "none";
+    };
+    let defTopads = 1;
+    function hiddenBottomNav() {
+        document.getElementById("footer-bottom").classList.add("footer-bottom-hidden");
+    }
+    function hiddenHeader() {
+        document.getElementById("header-top").classList.add("header-top-hidden");
+        document.querySelector(".line-navtop-category").style.height = 0;
+        defTopads = 0;
+    }
+    let mybutton = document.getElementById("myBtn");
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+            var currentScrollPos = window.pageYOffset;
+            if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+                mybutton.style.display = "flex";
+            } else {
+                mybutton.style.display = "none";
+            }
+            if (prevScrollpos + 10 > currentScrollPos) {
+                if(defTopads) { document.getElementById("header-top").classList.remove("header-top-hidden"); };
+            } else {
+                document.getElementById("header-top").classList.add("header-top-hidden");
+            }
+            prevScrollpos = currentScrollPos;
+    };
+    function topFunction() {
+        function kurang(angka, pengurang, fung, timer) {
+            fung(angka - pengurang)
+            if(angka > 0) {
+                setTimeout(() => { kurang(angka - pengurang, pengurang, fung, timer) }, timer && typeof timer === "number" ? timer : 10)
+            } else {
+                document.getElementById("header-top").classList.remove("header-top-hidden");
+                document.querySelector(".line-navtop-category").style.height = "70px";
+            };
+        };
+        kurang(window.scrollY, window.scrollY / 100, (angka) => {
+            window.scrollTo({top: angka, behavior: 'smooth'})
+        }, 4);
+    }
+    
+    function hiddenAdsonRight () {
+        document.querySelector(".ads-cld-right-box").classList.add("ads-cld-right-box-hidden");
+    }
+    
+    
+</script>
+
+
+</body>
+</html>

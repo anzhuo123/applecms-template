@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+<link rel="stylesheet" href="{$maccms.path_tpl}static/css/static.css" type="text/css" />
+<link rel="stylesheet" href="{$maccms.path_tpl}static/css/index.css" type="text/css" />
+{include file="public/include"}
+<body>
+    {include file="public/head"}
+    <div class="line-navtop-category"></div>
+    {include file="public/category"}
+    
+    
+    
+        <div class="novel-list">
+        <div class="novel_list_category">
+            <div class="d-flex">
+                <div class="novel-list-item">情色小说</div>
+            </div>
+        </div>
+        <div class="novel-list_ctx">
+            {maccms:art num="10" paging="no" type="all" order="asc" by="sort"}
+            <div class="novel-ctx-item">
+                
+                 <a class="novel-ctx-item-name-a" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}">
+                     <div class="novel-ctx-item-name">{$vo.art_name}</div>
+                 </a>
+                 
+                <div class="novel-ctx-item-info">
+                    <div class="novel-ctx-item-info-opt">
+                        <div class="novel-ctx-item-info-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/eye.svg" alt="">
+                        </div>
+                        {$vo.art_hits}
+                    </div>
+                    <div class="novel-ctx-item-info-opt" style="margin-left: 15px">
+                        <div class="novel-ctx-item-info-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/love.svg" alt="">
+                        </div>
+                        {$vo.art_points}
+                    </div>
+                </div>
+            </div>
+            {/maccms:art}
+        </div>
+    </div>
+    
+    
+    
+    
+    
+
+    {include file="public/foot"}

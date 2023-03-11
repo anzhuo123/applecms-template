@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head lang="zh-cn">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<meta name="format-detection" content="telephone=no, email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="applicable-device" content="pc,mobile" />
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="full-screen" content="yes" />
+<meta name="browsermode" content="application" />
+<meta name="x5-fullscreen" content="true" />
+<meta name="x5-page-mode" content="app" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="robots" content="noarchive" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="public, max-age=1800, must-revalidate" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+  <title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} - {$maccms.site_name}</title>
+  <meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+  <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+    <meta name="keywords" content="{vo.vod_name}在线收看,{vo.vod_name}迅雷下载" />
+    <meta name="description" content="{vo.vod_name}剧情:{$vo.vod_blurb}" />
+<link rel="shortcut icon" href="{$maccms.path_tpl}static/icon/logo.svg" />
+
+
+<link rel="stylesheet" href="{$maccms.path_tpl}static/css/static.css" type="text/css" />
+<link rel="stylesheet" href="{$maccms.path_tpl}static/css/index.css" type="text/css" />
+
+</head>
+<body>
+     {include file="public/head"}
+    <div style="width: 100%; padding-top: 70px;"></div>
+    {include file="public/category"}
+    
+    {maccms:vod num="30" paging="yes" pageurl="vod/search" order="desc" by="time"}{/maccms:vod}
+    <div class="video_list">
+	    <div class="breadcrumbs">
+        {$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}
+    	</div>
+    	<div class="breadcrumbs" style="color: black;"> 
+        标签
+    	</div>
+	</div>
+	
+	{maccms:vod num="28" paging="yes" pageurl="vod/search/1" order="desc" by="time"}
+    <div class="video_list">
+        <div class="video_list_category">{$vo.type_name}</div>
+        <div class="video_list_content">
+            <!--{maccms:vod num="20" paging="no" type=$vo.type_name order="abc" by="sort"}-->
+            <div class="video_item" onmouseover="vidoItemOnHover(this)" onmouseout="vidoItemOnOut(this)" data-tid="{$vo.vod_id}" data-avdata-type="1" data-space_name="s11" data-hash-id="{$vo.vod_id}">
+                <a href={:mac_url_vod_play($vo)} class="vid_img_link">
+                    <div class="vid_thum">
+                            <div class="video_play_icon">
+                                <img alt="{$vo.vod_name}" src="{$maccms.path_tpl}static/icon/ply.svg" alt="">
+                            </div>
+                            <img class="video_tumbnail_img img-thum" src="{$vo.vod_pic}" alt="">
+                    </div>
+                </a>
+                <div class="vid_info">
+                    <div class="vid_info_name">
+                        {$vo.vod_name}
+                    </div>
+                    <div class="vid_info_name-opt">
+                        <div class="vid_info_name-opt-icon">
+                            <img src="{$maccms.path_tpl}static/icon/eye.svg" alt="">
+                        </div>
+                        <span>
+                            {$vo.vod_hits}
+                        </span>
+                        <div class="vid_info_name-opt-icon" style="margin-left: 15px;">
+                            <img src="{$maccms.path_tpl}static/icon/calendar-symbol-svgrepo-com (1).svg" alt="">
+                        </div>
+                        <span class="vid_info_time_update">
+                            {$vo.vod_time|date='Y-m-d',###}
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <!--{/maccms:vod}-->
+        </div>
+    </div>
+    {/maccms:vod}
+        </div>
+    </div>
+</div>
+
+
+
+{include file="public/foot"}

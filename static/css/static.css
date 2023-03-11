@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.w-max-parent  {
+    width: 100%;
+}
+.d-flex {
+    display: flex;
+}
+.jsc-between {
+    justify-content: space-between;
+}
+.jsc-center {
+    justify-content: center;
+}
+.ai-center {
+    align-items: center;
+}
+.f-wrap {
+    flex-wrap: wrap;
+}
+.mlr-10 {
+    margin: 0 10px;
+}
+.ml-10 {
+   margin-left: 10px;
+}
+.mt-20 {
+   margin-top: 20px;
+}

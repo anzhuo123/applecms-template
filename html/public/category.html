@@ -1,0 +1,93 @@
+<header>
+    <div class="w-full bg-white px-1 pb-[0.1rem] text-gray-700 antialiased header-cat-search">
+        <div class="mx-auto max-w-screen-lg">
+            <div class="SearchBar_HeaderWrap__KjFy3">
+                <div class="SearchBar_LogoWrap__HwJId">
+                    <a class="mt-[-3px]" href="{$obj.website_jumpurl}">
+                        <img alt="logo" src="{$maccms.path_tpl}static/icon/logo.svg" width="90" height="40" decoding="async" data-nimg="1" class="h-10 w-32" style="color: transparent;">
+                    </a>
+                </div>
+                <div class="SearchBar_HeaderRight__XYxRc">
+                    <div class="SearchBar_Search__xXhmy">
+                        <form class="flex h-full items-center" name="search" method="POST" action="{:mac_url('vod/search')}">
+                            <label class="m-0 inline-block" for="inputSearch">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="22" width="22" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            </label>
+                            <input id="inputSearch" name="wd" class="SearchBar_Inputsearch__MR_jk input-search" placeholder="Search..." value="">
+                        </form>
+                    </div>
+                    <div class="dropdown-end dropdown history_view">
+                        
+                        <div class="history_view_ctx">
+                            <div class="history_view_ctx_nav">
+                                <div class="history_view_ctx_nav_opt">观看记录</div>
+                                <div class="history_view_ctx_nav_opt">清空</div>
+                            </div>
+                            <div class="history_view_ctx_content">
+                                <span class="mac_history_set" alt="Set Video History" data-name="[{$vo.type.type_name}]{$vo.vod_name}" data-pic="{ $vo.vod_pic|mac_url_img}"></span>
+                            </div>
+                        </div>
+
+                        <a tabindex="0" class="cursor-pointer">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="21" width="21" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {maccms:type ids="parent" order="asc" id="vo" key="key"}
+                {if condition="$vo.type_id eq 1"}
+                    <div class="mb-2 flex border-b border-black">
+                        <div class="Menu_ParentMenu__zOcvN bg-[#1d38d9]">
+                            <a class="Menu_ParentTitle__qYga_" style="font-weight:bold;" href="{:mac_url_type($vo)}">
+                                {$vo.type_name}
+                            </a>
+                        </div>
+                        <ul class="Header_ChildMenus__wsF52">
+                            {maccms:type parent="'.$vo['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+                            <li class="Menu_ChildMenu__Qe2t5">
+                                <a class="text-[0.5rem] Menu_VipColor__cNWMY" href="{:mac_url_type($vo2)}">
+                                    {$vo2.type_name}
+                                </a>
+                            </li>
+                            {/maccms:type}
+                        </ul>
+                    </div>
+                {elseif condition="$vo.childids neq '' " /}
+                    <div class="mb-2 flex border-b border-black">
+                        <div class="Menu_ParentMenu__zOcvN bg-[#b156cb]">
+                            <a class="Menu_ParentTitle__qYga_" href="{:mac_url_type($vo)}">
+                                {$vo.type_name}
+                            </a>
+                        </div>
+                        <ul class="Header_ChildMenus__wsF52">
+                            {maccms:type parent="'.$vo['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+                            <li class="Menu_ChildMenu__Qe2t5">
+                                <a class="text-[0.5rem] Menu_MenuColor__17lW_"href="{:mac_url_type($vo2)}">
+                                    {$vo2.type_name}
+                                </a>
+                            </li>
+                            {/maccms:type}
+                        </ul>
+                    </div>
+                {/if}
+            {/maccms:type}
+        </div>
+    </div>
+
+</header>
+<script>
+    document.querySelector(".history_view").addEventListener("click", () => {
+        const content = document.querySelector(".history_view_ctx")
+        if(content.className.includes("history_view_ctx-active")) {
+            content.classList.remove("history_view_ctx-active")
+        } else {
+            content.classList.add("history_view_ctx-active")
+        }
+    })
+</script>
